@@ -84,21 +84,32 @@
 
 **注意3**：写明login required的就是需要login才能访问的。如果没login会返回空串或者什么我还没想好，但总之前台应该对此有所判断。
 
-##### authentication
-
-`GET/POST /api/user/_login` 可能需要配合LoginForm使用。关于表单的问题还要再讨论
-
-`GET/POST /api/user/_logout` (login required)
-
-`POST /api/user/_signup` 
-
 ##### user
+
+`POST /api/user/_login` 
+    
++ Form: id = xx, password = xx （暂时用明文）
++ Return: {"state":"ok"/"failed"}
+
+`POST /api/user/_logout` POST but no form
+
++ Return: {"state":"ok"/"failed"}
+
+`POST /api/user/_signup` Form: id = xx, name = xx, password = xx (avatar = xx)
+
++ Return: {"state": "ok"/"invalid id"/"invalid password"/...}
 
 `GET /api/user/{id}` 获取用户模型（JSON-string）
 
-`GET /api/userinfo` (login required)获取有权限的用户模型
++ Return: User Model Json
 
-`PUT /api/userinfo` (login required)修改用户信息
+`GET /api/user/_me` 获取当前用户的模型
+
++ Return: User Model Json
+
+`PUT /api/user/_me` 修改当前用户的信息，Form: oldpass = xx, name = xx, password = xx (空为不改), (avatar = xx)
+
++ Return: {"state": "ok"/"invalid id"/"password incorrect"/...}
 
 ##### comment
 
