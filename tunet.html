@@ -1,0 +1,296 @@
+<html><head><title>清华大学信息门户</title><link href="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/purple.css" rel="stylesheet" type="text/css"><link href="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/purple_portlet.css" rel="stylesheet" type="text/css"><script src="script/session.js" type="text/javascript"></script><script type="text/javascript">
+       function openBrWindow(theURL,winName,features)
+       {window.open(theURL,winName,features);} 
+    </script><script type="text/javascript">
+          var imagesPath = "media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/institutional";
+         function moveAlong(layerName, paceLeft, paceTop, fromLeft, fromTop){
+					clearTimeout(eval(layerName).timer)
+					if(eval(layerName).curLeft != fromLeft){
+						if((Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft)) < paceLeft){eval(layerName).curLeft = fromLeft}
+						else if(eval(layerName).curLeft < fromLeft){eval(layerName).curLeft = eval(layerName).curLeft + paceLeft}
+						else if(eval(layerName).curLeft > fromLeft){eval(layerName).curLeft = eval(layerName).curLeft - paceLeft}
+						if(ie){document.getElementById(layerName).style.left = eval(layerName).curLeft}
+						if(ns){document.getElementById(layerName).left = eval(layerName).curLeft}
+				}
+				if(eval(layerName).curTop != fromTop){
+  			 if((Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop)) < paceTop){eval(layerName).curTop = fromTop}
+					else if(eval(layerName).curTop < fromTop){eval(layerName).curTop = eval(layerName).curTop + paceTop}
+					else if(eval(layerName).curTop > fromTop){eval(layerName).curTop = eval(layerName).curTop - paceTop}
+					if(ie){document.getElementById(layerName).style.top = eval(layerName).curTop}
+					if(ns){document.getElementById(layerName).top = eval(layerName).curTop}
+				}
+				eval(layerName).timer=setTimeout('moveAlong("'+layerName+'",'+paceLeft+','+paceTop+','+fromLeft+','+fromTop+')',30)
+			}
+
+			function setPace(layerName, fromLeft, fromTop, motionSpeed){
+				eval(layerName).gapLeft = (Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft))/motionSpeed
+				eval(layerName).gapTop = (Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop))/motionSpeed
+				moveAlong(layerName, eval(layerName).gapLeft, eval(layerName).gapTop, fromLeft, fromTop)
+			}
+			function FixY(){
+				if(ie){sidemenu.style.top = document.body.scrollTop+10}
+				if(ns){sidemenu.top = window.pageYOffset+10}
+			}
+			
+			//树形导航的JS代码
+			var expandState = 0;
+			function expand(){
+				if(expandState == 0){
+						 setPace('master', 0, 5, 5);
+						 if(ie){
+								 document.menutop.src = imagesPath + '/menu_in.gif'
+						 };
+						 expandState = 1;
+				}else{
+						setPace('master', -400, 5, 5);
+						if(ie){
+								document.menutop.src=imagesPath + '/menu_out.gif'
+						};
+					 expandState = 0;
+						}
+				}
+				var menutop1 = imagesPath +'/menutop.gif';
+				var menutop2  = imagesPath + '/menu_out.gif';
+			document.write("<style type=text/css>#master {LEFT: -400px; POSITION: absolute; TOP: 25px; VISIBILITY: visible; Z-INDEX:6}</style>")
+			document.write("<div><table id=master width='400' height='150' border='0' cellspacing='0' cellpadding='0' ><tr><td><img border=0 height=6 src=" +  menutop1  + " width=400></td><td rowspan='2' valign='top'><img id=up_menu onMouseOver=javascript:expand() border=0 height=60 name=menutop src=" + menutop2 + " style='z-index:2' width=18></td></tr>");
+                        document.write("<tr><td valign='top'><table width='100%' border='0' cellspacing='2' cellpadding='0'><tr><td height='170' valign='top'><table width=100% height='570' border=1 cellpadding=0 cellspacing=5 class='site_map_waikuang' style=FILTER: alpha(opacity=90)>");
+			document.write("<tr><td valign='top' class='site_map'>");
+
+			document.write("<iframe width='100%' height='100%' src='render.userLayoutRootNode.uP?fname=layout-sitetree' frameborder=0 style='z-index:8'></iframe></td></tr></table></td></tr></table></td></tr></table></div>");
+			var ie = (document.getElementById("*") != 'undefined') ? 1 : 0
+			var ns = document.layers ? 1 : 0
+			var master = new Object('element')
+			master.curLeft = -200;   master.curTop = 10;
+			master.gapLeft = 0;      master.gapTop = 0;
+			master.timer = null;
+			if(ie){var sidemenu = document.getElementById("master");}
+			if(ns){var sidemenu = document.getElementById("master");}
+			setInterval('FixY()',100);
+
+			function findObj(n, d) { //v4.01
+				  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+ 				   d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  				if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  				for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  				if(!x && d.getElementById) x=d.getElementById(n); return x;
+			}
+
+			function showHidObject(objectName){
+ 					 var obj = findObj(objectName);
+ 					 if(!obj) return;
+
+ 					 if(obj.style.display == "none"){
+  					  obj.style.display = "block";
+  				} else {
+  					  obj.style.display = "none";
+				  }
+			}
+
+			function isUndefined(v)
+			{
+						return typeof(v) == 'undefined';
+			}
+			function isDefined(v)
+			{
+				return typeof(v) != 'undefined';
+			}
+			function fillTemplate(template)
+			{
+					var result = template;
+					for (var i = 1; i< arguments.length; i+= 2)
+					{
+							var name = arguments[i];
+							var rexp = new RegExp('\\$\\{' + name + '\\}', 'g');
+							var value = arguments[i + 1];
+							result = result.replace(rexp, value);
+					}
+
+					return result;
+			}
+			function toggleOpen(modelSource)
+			{
+				var openFlagName = modelSource + '_open';
+				var open = eval(openFlagName);
+				if (open == undefined) open = false;
+					eval(openFlagName + '=' + !open);
+			}
+			function refreshElement(id)
+			{
+					var elm = document.getElementById(id);
+					if (elm)
+					{
+							var widget = ElementWidgetMap[id];
+							if (widget)
+							{
+									widget.updateModel();
+									elm.innerHTML = widget.render();
+							}
+					}
+			}
+			function isAllCharsEmpty(s)
+			{
+					for (var i = 0; i < s.length; i++)
+					{
+						if (s.charCodeAt(i) > 32)
+						return false;
+					}
+
+					return true;
+			}
+			function isEmpty(s)
+			{
+					return isUndefined(s) || s == null || s.length == 0 || isAllCharsEmpty(s);
+			}
+			function processEmpty(s)
+			{
+					return isEmpty(s) ? '' : s;
+			}
+			function nbsp(s)
+			{
+				return isEmpty(s) ? '&nbsp;' : s;
+			}
+			function addStaticContentPrefix(rest)
+			{
+				if (isDefined(staticContentPrefix) && staticContentPrefix != null)
+					return staticContentPrefix + rest;
+				else
+					throw "global variable staticContentPrefix undefined or null";
+			}
+			function renderWidgetWrapper(widget)
+			{
+					return fillTemplate(
+					Template.widgetWrapperElement,
+					'elementId', widget.elementId,
+					'content', widget.render()
+					);
+			}
+			function getToday()
+			{
+					var today = new Date();
+					return today.getDate() + '/' + MonthMap[today.getMonth()] + '/' + today.getFullYear();
+			}
+
+			var MonthMap = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+ 			
+    </script></head><body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" text="#000000" bgcolor="#FFFFFF"><iframe src="/lc/remind.jsp" style="display: none" height="0" width="0" frameboder="0" border="0"></iframe><table class="uportal-header-table"><tr><td bgcolor="#875594" align="right" width="40%"><img height="82" width="371" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/ban_l.gif"></td><td width="444"><img height="82" width="444" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/ban_c.gif"></td><td class="topright"><table align="right"><tr><td class="rtop"><a target="_blank" href="http://helpdesk.tsinghua.edu.cn/helpnew/PortalOverview/default.jsp"><span class="font_white">使用帮助</span></a><img width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><span class="font_white">|</span><img width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><a target="_blank" href="http://jcfw.cic.tsinghua.edu.cn/mailbox/mailservlet?ID=portal"><span class="font_white">意见反馈</span></a></td></tr><tr><td><img height="15" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr><tr><td class="rbottom"><a target="_blank" href="http://www.tsinghua.edu.cn/"><span class="font_white">清华主页</span></a><img width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><span class="font_white">|</span><img width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><a target="_blank" href="http://news.tsinghua.edu.cn/"><span class="font_white">清华新闻</span></a></td></tr></table></td></tr></table><table class="uportal-navigation-table-new"><tr><td width="100"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/tlog_03.jpg"></td><td class="bg_line_p1"><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td><td><table cellpadding="0" cellspacing="0" border="0" width="92"><tr><td class="inactiveTab_c_p1"><a target="_blank" href="/default.jsp">首    页</a></td><td class="bg_line_p1"><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table></td><td><table cellpadding="0" cellspacing="0" border="0"><tr><form action="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP" method="post" name="formRename"><td class="focusedTab_c_p1"><img height="1px" width="18px" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif">教学信息<img height="1px" width="18px" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></form><td class="bg_line_p1"><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table></td><td><table cellpadding="0" cellspacing="0" border="0"><tr><td class="inactiveTab_c_p1"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_sparam=focusedTabID&amp;focusedTabID=3&amp;uP_sparam=mode&amp;mode=view">其他信息</a></td><td class="bg_line_p1"><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table></td><td width="100%"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table class="uportal-navigation-table"><tr><td><img height="33" width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/nav-d-left.gif"></td><td align="left"><table><tr><td><table><tr><td><img height="1" width="3" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td><td valign="middle" align="center"><img height="9" width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/nav-d-arrow.gif.gif"></td><td><img height="1" width="2" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td><td valign="middle" align="center"><span class="uportal-navi-user">
+					            	当前用户：
+					            </span></td><td valign="middle" align="center"><span class="uportal-navi-user">张洵恺</span></td><td><img height="1" width="4" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td><td valign="middle" align="center"><span class="uportal-navi-user">zxk12</span></td><td><img height="1" width="4" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td><td valign="middle" align="center"><span class="uportal-navi-user">2012011486</span></td></tr></table></td><td><img height="1" width="14" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table></td><td align="right" width="100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_root=root&amp;uP_reload_layout=true&amp;uP_sparam=targetRestriction&amp;targetRestriction=no_targetRestriction_parameter&amp;uP_sparam=targetAction&amp;targetAction=no_targetAction_parameter&amp;uP_sparam=selectedID&amp;selectedID=&amp;uP_cancel_targets=true&amp;uP_sparam=mode&amp;mode=view"><img onmouseout="document.getElementById('img_refresh').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/refresh.gif';" onmouseover="document.getElementById('img_refresh').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/refresh_hl.gif';" border="0" height="23" width="60" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/refresh.gif" id="img_refresh"></a></td><td><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_fname=layout-sitemap&amp;uP_sparam=targetRestriction&amp;targetRestriction=no_targetRestriction_parameter&amp;uP_sparam=targetAction&amp;targetAction=no_targetAction_parameter&amp;uP_sparam=selectedID&amp;selectedID=&amp;uP_cancel_targets=true"><img onmouseout="document.getElementById('img_sitemap').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/sitemap.gif';" onmouseover="document.getElementById('img_sitemap').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/sitemap_hl.gif';" border="0" height="23" width="93" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/sitemap.gif" id="img_sitemap"></a></td><td><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_fname=passwordmgr&amp;uP_sparam=targetRestriction&amp;targetRestriction=no_targetRestriction_parameter&amp;uP_sparam=targetAction&amp;targetAction=no_targetAction_parameter&amp;uP_sparam=selectedID&amp;selectedID=&amp;uP_cancel_targets=true"><img onmouseout="document.getElementById('img_chgpass').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/chgpass.gif';" onmouseover="document.getElementById('img_chgpass').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/chgpass_hl.gif';" border="0" height="23" width="93" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/chgpass.gif" id="img_chgpass"></a></td><td><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_sparam=mode&amp;mode=preferences&amp;uP_sparam=focusedTabID&amp;focusedTabID=2"><img onmouseout="document.getElementById('img_customize').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/customize.gif';" onmouseover="document.getElementById('img_customize').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/customize_hl.gif';" border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/customize.gif" height="23" width="93" id="img_customize"></a></td><td><a class="uportal-navigation-category" href="Logout"><img onmouseout="document.getElementById('img_quit').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/quit.gif';" onmouseover="document.getElementById('img_quit').src='media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/quit_hl.gif';" border="0" height="23" width="60" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/quit.gif" id="img_quit"></a></td></tr></table></td><td><img height="33" width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/images/navi_purple_new/nav-d-right.gif"></td></tr></table><table cellpadding="0" cellspacing="4" cols="2" border="0" width="100%"><tr><td class="uportal-background-dark" width="50%" valign="top"><table id="17-1116_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-1116"><span class="window_title">登录日志</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_root=17-1116"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentfocus.gif" title="最大化" alt="最大化"></a><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-1116&amp;minimized_17-1116_value=true#17-1116"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><a onclick="openBrWindow('tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_detach_target=17-1116','detachedChannel','toolbar=yes,location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=640,height=480')" href="#"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentdetach.gif" title="弹出" alt="弹出"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%"><html><head><title>UPortal - Login Log Channel</title><link href="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/purple.css" rel="stylesheet" type="text/css"><script src="script/utils.js" type="text/javascript"></script><script charset="GBK" src="script/loginLog.js" type="text/javascript"></script></head><body><table cellspacing="0" cellpadding="0" align="center" border="0" width="100%"><tr><td align="left" class="uportal-channel-table-header" colspan="2">
+								最近成功登录记录
+								<img height="1" width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><a href="javascript:showMore_s()"><span id="showMore_but_s">[展开]</span></a></td></tr><tr><td>
+		于<span style="color:163a73">2014-11-03 13:46:51</span>, 
+		
+			从<span style="color:842029">166.111.4.26</span>
+		登录
+		<span style="color:163a73">
+				&quot;现行门户&quot;
+			</span>
+				成功
+			</td></tr><tr style="display:none" name="item_hidden_s"><td>
+		于<span style="color:163a73">2014-11-03 12:59:54</span>, 
+		
+			从<span style="color:842029">59.66.250.175</span>
+		登录
+		<span style="color:163a73">
+				&quot;清华统一用户登录系统&quot;
+			</span>
+				成功
+			</td></tr><tr style="display:none" name="item_hidden_s"><td>
+		于<span style="color:163a73">2014-11-03 12:59:53</span>, 
+		
+			从<span style="color:842029">59.66.250.175</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				成功
+			</td></tr><tr style="display:none" name="item_hidden_s"><td>
+		于<span style="color:163a73">2014-11-03 12:59:53</span>, 
+		
+			从<span style="color:842029">59.66.250.175</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				成功
+			</td></tr><tr style="display:none" name="item_hidden_s"><td>
+		于<span style="color:163a73">2014-11-03 12:53:09</span>, 
+		
+			从<span style="color:842029">59.66.250.219</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				成功
+			</td></tr><tr><td align="left" class="uportal-channel-table-header" colspan="2">
+								最近失败登录记录
+							<img height="1" width="5" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"><a href="javascript:showMore_f()"><span id="showMore_but_f">[展开]</span></a></td></tr><tr><td>
+		于<span style="color:163a73">2014-11-01 22:56:02</span>, 
+		
+			从<span style="color:842029">59.66.250.219</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				失败
+			</td></tr><tr style="display:none" name="item_hidden_f"><td>
+		于<span style="color:163a73">2014-11-01 22:56:02</span>, 
+		
+			从<span style="color:842029">59.66.250.219</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				失败
+			</td></tr><tr style="display:none" name="item_hidden_f"><td>
+		于<span style="color:163a73">2014-11-01 22:55:54</span>, 
+		
+			从<span style="color:842029">59.66.250.219</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				失败
+			</td></tr><tr style="display:none" name="item_hidden_f"><td>
+		于<span style="color:163a73">2014-11-01 22:55:54</span>, 
+		
+			从<span style="color:842029">59.66.250.219</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				失败
+			</td></tr><tr style="display:none" name="item_hidden_f"><td>
+		于<span style="color:163a73">2014-11-01 12:13:16</span>, 
+		
+			从<span style="color:842029">59.66.135.34</span>
+		登录
+		<span style="color:163a73">
+				&quot;网络学堂&quot;
+			</span>
+				失败
+			</td></tr></table></body></html></td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-298_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-298"><span class="window_title">教学日历</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-298&amp;minimized_17-298_value=true#17-298"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=/jxmh.do&amp;m=bks_jxrl&amp;ticket=pm8EKA0Hpw2n01553HE9KWW99XZK7C4FLAXX">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-300_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/ggfw.gif"></td><td><a name="17-300"><span class="window_title">培养信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-300&amp;minimized_17-300_value=true#17-300"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=/portal.portal.do&amp;m=bksBxqJxjh&amp;ticket=pm8EKA0Hpw2n01NDRXV2H6TZWEFNRQRNHP6Y">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-302_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/ggfw.gif"></td><td><a name="17-302"><span class="window_title">教学评估</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-302&amp;minimized_17-302_value=true#17-302"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=pj.xspj_cpkcb_v.do&amp;m=xspj_slecpkc_jxmh&amp;portal=yes&amp;ticket=pm8EKA0Hpw2n01PTQJZK7HTSRZN8FCYAFT26">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-304_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-304"><span class="window_title">SRT信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-304&amp;minimized_17-304_value=true#17-304"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=/srt/frame_jxmh.jsp&amp;ticket=pm8EKA0Hpw2n01528LNGC6U6DRVM8SN3EK3R">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-562_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-562"><span class="window_title">文化素质课</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-562&amp;minimized_17-562_value=true#17-562"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="/minichan/bks_whszk.jsp">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-662_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-662"><span class="window_title">体育课信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-662&amp;minimized_17-662_value=true#17-662"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=jxmh.do&amp;m=bks_tyjx_tcyy&amp;ticket=pm8EKA0Hpw2n01JH97PHYMC9TL3ACWSV89GL">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table></td><td class="uportal-background-dark" width="50%" valign="top"><table id="17-299_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/wlxt.gif"></td><td><a name="17-299"><span class="window_title">网络学堂</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-299&amp;minimized_17-299_value=true#17-299"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://learn.tsinghua.edu.cn/info/roam_newinfo.jsp?ticket=pm8EKA0Hpw2n01H4PHNVQJJ4KUCP8TNPBCJ7">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-301_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/kcxx.gif"></td><td><a name="17-301"><span class="window_title">选课信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-301&amp;minimized_17-301_value=true#17-301"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=/jxmh.do&amp;m=bks_yjkbSearch&amp;ticket=pm8EKA0Hpw2n01AKYD6VXT29FKXV5RSPUZAN">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-303_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/ggfw.gif"></td><td><a name="17-303"><span class="window_title">成绩信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-303&amp;minimized_17-303_value=true#17-303"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=/jxmh.do&amp;m=bks_yxkccj&amp;ticket=pm8EKA0Hpw2n01CSMCLVKKXAKDHML4ANAQRS">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-670_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/ggfw.gif"></td><td><a name="17-670"><span class="window_title">TEPT考试成绩</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-670&amp;minimized_17-670_value=true#17-670"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=ywspks.v_cj_bks_yyspcj_zgcj.do&amp;ticket=pm8EKA0Hpw2n01SHNCU6PP4V5NJ5E7KBGYM9">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-642_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-642"><span class="window_title">境外短期研修信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-642&amp;minimized_17-642_value=true#17-642"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=gjpy.v_gjpy_jwyxxfsqb.do&amp;m=xsym&amp;ticket=pm8EKA0Hpw2n014RSZB34XYS3CU6CGQD3BXQ">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table><table cellpadding="2" cellspacing="0" border="0" width="100%"><tr><td><img height="1" width="1" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table><table id="17-305_table" class="uportal-channel-border" cellpadding="0" cellspacing="1" border="0" width="100%"><tr><td valign="top"><table background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/channeltopborder.gif" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="5" height="25"></td><td align="center" width="28"><img src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/chanPics/qtxx.gif"></td><td><a name="17-305"><span class="window_title">综合论文信息</span></a></td><td align="right" nowrap="nowrap" width="85"><a href="tag.42717e7fc3bdbc0b.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=17-305&amp;minimized_17-305_value=true#17-305"><img border="0" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentminimize.gif" title="最小化" alt="最小化"></a><img border="0" title="这个频道不能删除" alt="这个频道不能删除" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/icons/contentcandisabled.gif"></td></tr></table></td></tr><tr colspan="3"><td colspan="4" class="uportal-background-content"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td colspan="2" width="100%">
+  This browser does not support inline frames.<br><a target="_blank" href="http://zhjw.cic.tsinghua.edu.cn/j_acegi_login.do?url=loginZhlwxlAction.zhlw&amp;ticket=pm8EKA0Hpw2n01ELRK8RF23W5XP72MBZEAY6">Click here to view content</a> in a separate window.
+</td></tr></table></td></tr></table></td></tr></table><table style="background-repeat:repeat-x" background="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/mainBorder/bottomborder.jpg" align="center" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td><img width="1" height="10" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr><tr><td align="center">技术支持：<a target="_blank" href="http://info.itc.tsinghua.edu.cn/">清华大学信息化技术中心</a></td></tr><tr><td align="center">服务平台：<a target="_blank" href="http://helpdesk.tsinghua.edu.cn/">http://helpdesk.tsinghua.edu.cn/</a><img width="8" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif">管理员信箱：<a target="_blank" href="mailto:webmaster@cic.tsinghua.edu.cn">webmaster@cic.tsinghua.edu.cn</a><img width="8" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif">服务热线：62771940/62771942/51775940</td></tr><tr><td><img width="1" height="10" src="media/org/jasig/portal/layout/AL_TabColumn/integratedModes/purple/skin/transparent.gif"></td></tr></table></body></html>

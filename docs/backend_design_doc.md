@@ -89,15 +89,15 @@
 `POST /api/user/_login` 
     
 + Form: id = xx, password = xx （暂时用明文）
-+ Return: {"state":"ok"/"failed"}
++ Return: `{"state":"ok"/"failed"}`
 
 `POST /api/user/_logout` POST but no form
 
-+ Return: {"state":"ok"/"failed"}
++ Return: `{"state":"ok"/"failed"}`
 
 `POST /api/user/_signup` Form: id = xx, name = xx, password = xx (avatar = xx)
 
-+ Return: {"state": "ok"/"invalid id"/"invalid password"/...}
++ Return: `{"state": "ok"/"invalid id"/"invalid password"/...}`
 
 `GET /api/user/{id}` 获取用户模型（JSON-string）
 
@@ -107,9 +107,9 @@
 
 + Return: User Model Json
 
-`PUT /api/user/_me` 修改当前用户的信息，Form: oldpass = xx, name = xx, password = xx (空为不改), (avatar = xx)
+<del>`PUT /api/user/_me` 修改当前用户的信息，Form: oldpass = xx, name = xx, password = xx (空为不改), (avatar = xx)</del>
 
-+ Return: {"state": "ok"/"invalid id"/"password incorrect"/...}
++ Return: `{"state": "ok"/"invalid id"/"password incorrect"/...}`
 
 ##### comment
 
@@ -125,13 +125,36 @@
 
 `PUT /api/notice/{nid}` (login required)标记某条通知为已读过/未读过（http参数 read?=True）
 ##### video
-`GET /api/video` 获取资源列表（视频模型JSON-array）（相当于使用`GET /api/videolist`）
+`GET /api/video` 
++ Return: `[video jsons]`（相当于使用`GET /api/videolist`）
 
-`GET /api/video/{id}` 获取视频资源，返回值为视频模型JSON。
+`GET /api/video/{id}`
 
-`POST /api/video` (login required) 上传视频资源 
++ Return: video json
+
+`POST /api/video/{id}/_play`
+
++ No para and no return. 视频播放数+1 
+
+<del>`POST /api/video` (login required) 上传视频资源</del>
 
 <del>`DELETE /api/video/{id}` 删除视频资源</del>
+
+`GET /api/video/{id}/_like`赞了此视频的用户列表
+
++ Return: `{"total": some number}` (注意是id不是user model)
+
+`POST /api/video/{id}/_like`(login required)翻转当前用户赞的状态（赞->未赞，未赞->赞）
+
++ Return: `{"like": "yes"/"no"}`
+
+`GET /api/video/{video_id}/_like/{user_id}`查询视频被某用户赞过
+
++ Return: `{"like": "yes"/"no"}`
+
+`GET /api/video/{video_id}/_like/_me`查询自己是否赞过某视频
+
++ Return: `{"like": "yes"/"no"}`
 
 ##### videolist
 
