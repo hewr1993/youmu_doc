@@ -88,7 +88,7 @@
 
 `POST /api/user/_login` 
     
-+ Form: id = xx, password = xx （暂时用明文）
++ Data: username = xx, password = xx （暂时用明文）
 + Return: `{"state":"ok"/"failed"}`
 
 `POST /api/user/_logout` POST but no form
@@ -107,7 +107,9 @@
 
 + Return: User Model Json
 
-<del>`PUT /api/user/_me` 修改当前用户的信息，Form: oldpass = xx, name = xx, password = xx (空为不改), (avatar = xx)</del>
+`PUT /api/user/_me` 修改当前用户的信息，
+
++ Data: name = xx, (avatar = xx)（注意：如果未来有更多选项，这里要把所有个人信息的都传进来，而非只传有改动的几项）
 
 + Return: `{"state": "ok"/"invalid id"/"password incorrect"/...}`
 
