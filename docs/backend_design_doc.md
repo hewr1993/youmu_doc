@@ -56,16 +56,16 @@
 ```
 {
     "comment_id": 30,
-    "mid": "233233233",
     "content": "吼啊",
     "user_id": "abcde",
-    "user_name": "平西王",
-    "user_avatar": "/some/strange/url.png"
     "video_id": "65546",
-    "reply_to": "233233233"
+    "reply_to": "",
+    "reply_time": "2014-11-06-16:44:00",
     "floor": 1
 }
 ```
+
+replyto选项现在没用。以后考虑要不要加
 
 ##### notice
 
@@ -103,7 +103,7 @@
 
 + Return: User Model Json
 
-`GET /api/user/_me` 获取当前用户的模型
+`GET /api/user/_me` 获取当前用户的模型，用户未登录则为空串
 
 + Return: User Model Json
 
@@ -115,9 +115,19 @@
 
 ##### comment
 
-`POST /api/comment/{video_id}` 在某个视频下评论（参数里有回复楼层之类的。不需要提供id，会在session中找）
+`POST /api/comment/video/{video_id}` 在某个视频下评论（参数里有回复楼层之类的。不需要提供id）
 
-剩下的懒得想了！靠你们啦
++ Return: `{ "state" : msg }` msg为yes代表成功。其他的可能有need login, no content等均为失败。
+
+`GET /api/comment/video/{video_id}`
+
++ Return: List of comment model json，返回按照楼层排序
+
+`GET /api/comment/user/{user_id}`
+
++ Return: List of comment model json，返回按照评论时间排序（可带参数reverse = 0/1，0升序，1降序）
+
+以上两个请求均可以带offset（默认0），size（默认20）的参数。
 
 ##### notification
 
@@ -128,7 +138,7 @@
 `PUT /api/notice/{nid}` (login required)标记某条通知为已读过/未读过（http参数 read?=True）
 ##### video
 `GET /api/video` 
-+ Return: `[video jsons]`（相当于使用`GET /api/videolist`）
++ Return: `[video jsons]`（**类似**于使用`GET /api/videolist`）
 
 `GET /api/video/{id}`
 
@@ -144,7 +154,7 @@
 
 `GET /api/video/{id}/_like`赞了此视频的用户列表
 
-+ Return: `{"total": some number}` (注意是id不是user model)
++ Return: `{"total": some number}` 
 
 `POST /api/video/{id}/_like`(login required)翻转当前用户赞的状态（赞->未赞，未赞->赞）
 
@@ -160,14 +170,17 @@
 
 ##### videolist
 
-所有查询类请求均支持offset(?=0), size(?=10), order_by(?="time"), reverse(?=False), filters(?=None)参数
+所有查询类请求均支持offset(?=0), size(?=10), order_by(?="upload_time"), reverse(?=0), filters(?=None)参数
 
 order_by参数可有以下选择：
 
-+ time: 按上传时间排序。reverse为False（默认）时，最早上传的视频靠前。
-+ count: 按点击量排序。reverse为False（默认）时，点击量最少的视频靠前。
++ upload_time: 按上传时间排序。reverse为False（默认）时，最早上传的视频靠前。
++ play_count: 按点击量排序。reverse为False（默认）时，点击量最少的视频靠前。
++ like: 同上
 
-filters参数为一key-value字典。下面列出的所有url模板中可能的参数都可以写在filters中。另外，如果uri中的属性与filters中的属性冲突，优先采用uri中的属性。<del>当filters为None时，可能会获得更好的查询性能。</del>
+<del>filters参数为一key-value字典。下面列出的所有url模板中可能的参数都可以写在filters中。另外，如果uri中的属性与filters中的属性冲突，优先采用uri中的属性。当filters为None时，可能会获得更好的查询性能。</del>
+
+**目前不计划支持复合查询**
 
 `GET /api/videolist` 最general的查询方式。
 
