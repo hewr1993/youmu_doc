@@ -18,7 +18,7 @@
 ```
 {
     "id": "some unique id",
-    "mid": "32435234632462345",
+    "admin": true,
     "name": "江主席",
     "avatar": "/some/strange/url.png",
     "password": "hashed password",
@@ -30,10 +30,9 @@
 ```
 {
     "video_id": "65546",
-    "mid": "34534543dhgfhdf",
     "owner_id": "",
-    "owner_mid" : "",
-    “disabled": False,
+    "disabled": False,
+    "banned": True,
     "title": "江主席怒斥香港记者",
     "upload_time": "SOMEDATETIME"
     "length": 176,
@@ -117,7 +116,11 @@ replyto选项现在没用。以后考虑要不要加
 
 `POST /api/comment/video/{video_id}` 在某个视频下评论（参数里有回复楼层之类的。不需要提供id）
 
-+ Return: `{ "state" : msg }` msg为yes代表成功。其他的可能有need login, no content等均为失败。
++ Return: `{ "state" : msg }` msg为ok代表成功。其他的可能有need login, no content等均为失败。
+
+`DELETE /api/comment/{comment_id}` 删除某条评论
+
++ Return: `{ "state": "ok" }` 
 
 `GET /api/comment/video/{video_id}`
 
@@ -144,6 +147,10 @@ replyto选项现在没用。以后考虑要不要加
 
 + Return: video json
 
+`POST /api/video/{id}/_disable` 隐藏某视频。会检查当前用户是否是owner。
+
+`POST /api/video/{id}/_ban` 和谐某视频。会检查当前用户是否是admin。
+
 `POST /api/video/{id}/_play`
 
 + No para and no return. 视频播放数+1 
@@ -168,6 +175,8 @@ replyto选项现在没用。以后考虑要不要加
 
 + Return: `{"like": "yes"/"no"}`
 
+`GET /file/<video_id>/WAIMAIdi2fen0.5price"` dirty code。。。
+
 ##### videolist
 
 所有查询类请求均支持offset(?=0), size(?=10), order_by(?="upload_time"), reverse(?=0), filters(?=None)参数
@@ -186,8 +195,8 @@ order_by参数可有以下选择：
 
 `GET /api/videolist/owner/{id}` 获取指定用户上传的视频列表
 
-`GET /api/videolist/tag/{query}` 获取指定标签的视频列表
+<del>`GET /api/videolist/tag/{query}` 获取指定标签的视频列表</del>
 
 `GET /api/videolist/name/{query}` 获取指定名字的视频列表
 
-`GET /api/videolist/keyword/{query}` 按关键字搜索的视频列表
+<del>`GET /api/videolist/keyword/{query}` 按关键字搜索的视频列表</del>
