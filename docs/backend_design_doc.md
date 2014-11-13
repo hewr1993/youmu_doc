@@ -22,6 +22,7 @@
     "name": "江主席",
     "avatar": "/some/strange/url.png",
     "password": "hashed password",
+    "disabled": false
 }
 ```
 
@@ -67,6 +68,16 @@
     "floor": 1
 }
 ```
+
+##### admin
+
+`GET /api/user` 返回所有用户的model。可带offset，size参数
+
++ Return `{ "total": 5, "result": [{...}...] }`
+
+`POST /api/user/{user_id}/_enable`
+
+`POST /api/user/{user_id}/_disable`
 
 ##### user
 
