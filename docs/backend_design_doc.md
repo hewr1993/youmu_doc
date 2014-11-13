@@ -31,6 +31,8 @@
 {
     "video_id": "65546",
     "owner_id": "",
+    "owner_name": "",
+    "owner_avatar": "",
     "disabled": False,
     "banned": True,
     "title": "江主席怒斥香港记者",
@@ -57,31 +59,14 @@
     "comment_id": 30,
     "content": "吼啊",
     "user_id": "abcde",
+    "user_name": "",
+    "user_avatar": "",
     "video_id": "65546",
     "reply_to": "",
     "reply_time": "2014-11-06-16:44:00",
     "floor": 1
 }
 ```
-
-replyto选项现在没用。以后考虑要不要加
-
-##### notice
-
-```
-靠你们啦~
-```
-
-注意：凡是以mid命名的key，均代表它是某一个document在mongo中的id字符串化后的结果。
-### APIs
-
-（所有HTML资源的获取方式在此不列）
-
-**注意1**：API仍属于unstable阶段。如果需要变更API，请在issue上提出；如果API发生变更，会通过邮件列表通知每位成员开发者维护代码。
-
-**注意2**：每访问一次API都将带来一定的运行开销，因此前端应尽量调用最合适的API，避免冗余操作。如果某个操作需要多个API进行组合，可能是API设计不合理，请发issue说明。对于一些参数固定且频繁使用的API（例如“点击量前五的视频”），请在issue上说明以开放专用API。<del>专用API将使用cache机制优化性能。</del>
-
-**注意3**：写明login required的就是需要login才能访问的。如果没login会返回空串或者什么我还没想好，但总之前台应该对此有所判断。
 
 ##### user
 
@@ -131,14 +116,6 @@ replyto选项现在没用。以后考虑要不要加
 + Return: List of comment model json，返回按照评论时间排序（可带参数reverse = 0/1，0升序，1降序）
 
 以上两个请求均可以带offset（默认0），size（默认20）的参数。
-
-##### notification
-
-`GET /api/notification/` (login required)获取用户当前的通知列表
-
-`GET /api/notice/{nid}` (login required)获取某条具体的通知
-
-`PUT /api/notice/{nid}` (login required)标记某条通知为已读过/未读过（http参数 read?=True）
 ##### video
 `GET /api/video` 
 + Return: `[video jsons]`（**类似**于使用`GET /api/videolist`）
@@ -151,13 +128,13 @@ replyto选项现在没用。以后考虑要不要加
 
 `POST /api/video/{id}/_ban` 和谐某视频。会检查当前用户是否是admin。
 
+`POST /api/video/{id}/_enable` 显示某视频。会检查当前用户是否是owner。
+
+`POST /api/video/{id}/_unban` 解封某视频。会检查当前用户是否是admin。
+
 `POST /api/video/{id}/_play`
 
 + No para and no return. 视频播放数+1 
-
-<del>`POST /api/video` (login required) 上传视频资源</del>
-
-<del>`DELETE /api/video/{id}` 删除视频资源</del>
 
 `GET /api/video/{id}/_like`赞了此视频的用户列表
 
