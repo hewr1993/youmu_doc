@@ -69,6 +69,12 @@
 }
 ```
 
+##### 测试用临时接口
+
+`GET /api/user/_transform` 将当前用户在管理员和超级用户中切换
+
+`GET /api/user/_tell` 返回用户名字
+
 ##### admin
 
 `GET /api/user` 返回所有用户的model。可带offset，size参数
