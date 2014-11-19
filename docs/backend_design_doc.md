@@ -69,6 +69,8 @@
 }
 ```
 
+### APIs
+
 ##### 测试用临时接口
 
 `GET /api/user/_transform` 将当前用户在管理员和超级用户中切换
@@ -133,6 +135,14 @@
 + Return: List of comment model json，返回按照评论时间排序（可带参数reverse = 0/1，0升序，1降序）
 
 以上两个请求均可以带offset（默认0），size（默认20）的参数。
+
+##### barrage
+
+`POST /api/barrage/video/{video_id}` 在某个视频上发弹幕。参数为json
+
++ param: position=(double在视频中的位置), mode=(int弹幕模式), size=(int字号), color=(int颜色), stamp=(double创建时间戳), pool=(int弹幕池)
+
+`GET /api/barrage/video/{video_id}` 返回挂在某个视频下的所有弹幕的“内容”（比如那个xml或者其他的）的列表。看你那边需要其他什么花式查询（比如按照出现位置的filter之类的）我再加。
 ##### video
 `GET /api/video` 
 + Return: `[video jsons]`（**类似**于使用`GET /api/videolist`）
