@@ -140,7 +140,7 @@
 
 `POST /api/barrage/video/{video_id}` 在某个视频上发弹幕。参数为json
 
-+ param: position=(double在视频中的位置), mode=(int弹幕模式), size=(int字号), color=(int颜色), stamp=(double创建时间戳), pool=(int弹幕池)
++ param: position=(double在视频中的位置), mode=(int弹幕模式), size=(int字号), color=(int颜色), pool=(int弹幕池)
 
 `GET /api/barrage/video/{video_id}` 返回挂在某个视频下的所有弹幕的“内容”（比如那个xml或者其他的）的列表。看你那边需要其他什么花式查询（比如按照出现位置的filter之类的）我再加。
 ##### video
