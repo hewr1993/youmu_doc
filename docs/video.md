@@ -1,13 +1,12 @@
 #video  
-`I.网站的视频端。`  
-`II.以下为整个工程下Video端的目录列表。区块引用（即名称左侧有一竖线处）表示该路径的最深处。 `
+1.网站的视频端。  
+2.以下为整个工程下Video端的目录列表。区块引用（即名称左侧有一竖线处）表示该路径的最深处。  
 
-* ##node_modules  
-`node功能模块 `
+* ##node_modules：node功能模块 
     * ###request  
 
 		* ####lib  
-			>cookies.js  
+			cookies.js  
 			copy.js  
 			debug.js  
 			helpers.js  
@@ -15,7 +14,7 @@
 		* ####node_modules  
 
 			* #####aws-sign2  
-				>index.js  
+				index.js  
 				LICENSE  
 				package.json  
 				README.md  
@@ -24,7 +23,7 @@
 				* #####node_modules  
 					* #####readable-stream  
 						* #####lib  
-							>_stream_duplex.js  
+							_stream_duplex.js  
 							_stream_passthrough.js  
 							_stream_readable.js  
 							_stream_transform.js  
@@ -32,13 +31,13 @@
 						* #####node_modules  
 							* #####core-util-is  
 								* #####lib  
-									>util.js  
+									util.js  
 								* float.patch  
 								* package.json  
 								* README.md  
 								* util.js  
 							* #####inherits  
-								>inherits_browser.js  
+								inherits_browser.js  
 								inherits.js  
 								LICENSE  
 								package.json  
@@ -46,13 +45,13 @@
 								test.js  
 							* #####isarray  
 								* #####build  
-									>build.js  
+									build.js  
 								* component.json  
 								* index.js  
 								* package.json  
 								* README.md  
 							* #####string_decoder  
-								>.npmignore  
+								.npmignore  
 								index.js  
 								LICENSE  
 								package.json  
@@ -69,7 +68,7 @@
 
 				* #####test  
 
-					>basic-test.js  
+					basic-test.js  
 					sauce.js  
 					test.js  
 
@@ -83,7 +82,7 @@
 
 			* #####caseless  
 
-				>index.js  
+				index.js  
 				package.json  
 				README.md  
 				test.js  
@@ -91,16 +90,16 @@
 			* #####combined-stream  
 
 				* #####lib  
-					>combined_stream.js
+					combined_stream.js
 
 				* #####node_modules  
 					* #####delayed-stream  
 						* #####lib  
-							>delayed_stream.js  
+							delayed_stream.js  
 
 						* #####test  
 							* #####integration  
-								>test-delayed-http-upload.js  
+								test-delayed-http-upload.js  
 								test-delayed-stream.js  
 								test-delayed-stream-auto-pause.js  
 								test-delayed-stream-pause.js  
@@ -124,18 +123,18 @@
 
 			* #####forever-agent  
 
-				>index.js  
+				index.js  
 				LICENSE  
 				package.json  
 				README.md  
 
 			* #####form-data  
 				* #####lib  
-					>form_data.js  
+					form_data.js  
 				* #####node_modules  
 					* #####async  
 						* #####lib  
-							>async.js  
+							async.js  
 						* .travis.yml  
 						* component.json  
 						* LICENSE  
@@ -143,7 +142,7 @@
 						* README.md  
 					* #####mime  
 						* #####types  
-							>mime.types  
+							mime.types  
 							node.types  
 						* LICENSE  
 						* mime.js  
@@ -155,12 +154,12 @@
 				* Readme.md  
 			* #####hawk  
 				* #####example  
-					>usage.js  
+					usage.js  
 				* #####images  
-					>hawk.png  
+					hawk.png  
 					logo.png  
 				* #####lib  
-					>browser.js  
+					browser.js  
 					client.js  
 					crypto.js  
 					index.js  
@@ -169,11 +168,11 @@
 				* #####node_modules  
 					* #####boom  
 						* #####images  
-							>boom.png  
+							boom.png  
 						* #####lib  
-							>index.js  
+							index.js  
 						* #####test  
-							>index.js  
+							index.js  
 						* .npmignore  
 						* .travis.yml  
 						* index.js  
@@ -183,9 +182,9 @@
 						* README.md  
 					* #####cryptiles  
 						* #####lib  
-							>index.js  
+							index.js  
 						* #####test  
-							>index.js  
+							index.js  
 						* .npmignore  
 						* .travis.yml  
 						* index.js  
@@ -195,13 +194,13 @@
 						* README.md  
 					* #####hoek  
 						* #####images  
-							>hoek.png  
+							hoek.png  
 						* #####lib  
-							>escape.js  
+							escape.js  
 							index.js  
 						* #####test  
 							* #####modules  
-								>test1.js  
+								test1.js  
 								test2.js  
 								test3.js  
 							* escaper.js  
@@ -215,12 +214,12 @@
 						* README.md  
 					* #####sntp  
 						* #####examples  
-							>offset.js  
+							offset.js  
 							time.js  
 						* #####lib  
-							>index.js  
+							index.js  
 						* #####test  
-							>index.js  
+							index.js  
 						* .npmignore  
 						.travis.yml  
 						* index.js  
@@ -229,7 +228,7 @@
 						* package.json  
 						* README.md  
 				* #####test  
-					>browser.js  
+					browser.js  
 					client.js  
 					crypto.js  
 					index.js  
@@ -247,7 +246,7 @@
 				* README.md  
 			* #####http-signature  
 				* #####lib  
-					>index.js  
+					index.js  
 					parser.js  
 					signer.js  
 					util.js  
@@ -256,7 +255,7 @@
 					* #####asn1  
 						* #####lib  
 							* #####ber  
-								>errors.js  
+								errors.js  
 								index.js  
 								reader.js  
 								types.js  
@@ -264,26 +263,26 @@
 							* index.js  
 						* #####tst  
 							* #####ber  
-								>reader.test.js  
+								reader.test.js  
 								writer.test.js  
 						* .npmignore  
 						* LICENSE  
 						* package.json  
 						* README.md  
 					* #####assert-plus  
-						>assert.js  
+						assert.js  
 						package.json  
 						README.md  
 					* #####ctype  
 						* #####man  
 							* #####man3ctype  
-								>ctio.3ctype  
+								ctio.3ctype  
 						* #####tools  
-							>jsl.conf  
+							jsl.conf  
 							jsstyle  
 						* #####tst  
 							* #####ctf  
-								>float.json  
+								float.json  
 								int.json  
 								psinfo.json  
 								struct.json  
@@ -296,20 +295,20 @@
 								typedef.json  
 							* #####ctio  
 								* #####float  
-									>tst.rfloat.js  
+									tst.rfloat.js  
 									tst.wfloat.js  
 								* #####int  
-									>tst.64.js  
+									tst.64.js  
 									tst.rint.js  
 									tst.wbounds.js  
 									tst.wint.js  
 								* #####uint  
-									>tst.64.js  
+									tst.64.js  
 									tst.roundtrip.js  
 									tst.ruint.js  
 									tst.wuint.js  
 							* #####ctype  
-								>tst.basicr.js  
+								tst.basicr.js  
 								tst.basicw.js  
 								tst.char.js  
 								tst.endian.js  
@@ -332,14 +331,14 @@
 				* package.json  
 				* README.md  
 			* #####json-stringify-safe  
-				>LICENSE  
+				LICENSE  
 				package.json  
 				README.md  
 				stringify.js  
 				test.js  
 			* #####mime-types  
 				* #####lib  
-					>custom.json  
+					custom.json  
 					index.js  
 					mime.json  
 					node.json  
@@ -353,13 +352,13 @@
 				* SOURCES.md  
 			* #####node-uuid  
 				* #####benchmark  
-					>bench.gnu  
+					bench.gnu  
 					bench.sh  
 					benchmark.js  
 					benchmark-native.c  
 					README.md  
 				* #####test  
-					>compare_v1.js  
+					compare_v1.js  
 					test.html  
 					test.js  
 				* .npmignore  
@@ -369,19 +368,19 @@
 				* README.md  
 				* uuid.js  
 			* #####oauth-sign  
-				>index.js  
+				index.js  
 				LICENSE  
 				package.json  
 				README.md  
 				test.js  
 			* #####qs  
 				* #####lib  
-					>index.js  
+					index.js  
 					parse.js  
 					stringify.js  
 					utils.js  
 				* #####test  
-					>parse.js  
+					parse.js  
 					stringify.js  
 				* .jshintignore  
 				* .jshintrc  
@@ -395,7 +394,7 @@
 				* package.json  
 				* README.md  
 			* #####stringstream  
-				>.npmignore  
+				.npmignore  
 				.travis.yml  
 				example.js  
 				LICENSE.txt  
@@ -404,13 +403,13 @@
 				stringstream.js  
 			* #####tough-cookie  
 				* #####lib  
-					>cookie.js  
+					cookie.js  
 					memstore.js  
 					pubsuffix.js  
 					store.js  
 				* #####node_modules  
 					* #####punycode  
-						>LICENSE-MIT.txt  
+						LICENSE-MIT.txt  
 						package.json  
 						punycode.js  
 						README.md  
@@ -424,7 +423,7 @@
 				* README.md  
 				* test.js  
 			* #####tunnel-agent  
-				>.jshintrc  
+				.jshintrc  
 				index.js  
 				LICENSE  
 				package.json  
@@ -454,7 +453,7 @@
 
 	* ###hooks  
 
-		>applypatch-msg.sample  
+		applypatch-msg.sample  
 		commit-msg.sample  
 		post-update.sample  
 		pre-applypatch.sample  
@@ -466,7 +465,7 @@
 
 	* ###info  
 
-		>exclude
+		exclude
   
 	* ###logs  
 
@@ -474,13 +473,13 @@
   
 			* #####heads
   
-				>master  
+				master  
 
 			* #####remotes
   
 				* #####origin
   
-					>HEAD  
+					HEAD  
 
 		* HEAD  
 
@@ -490,18 +489,18 @@
 
 		* ####pack  
 
-			>pack-f5224d1d1e6c900bd23fbdfbf11627425fcfb0e8.idx  
+			pack-f5224d1d1e6c900bd23fbdfbf11627425fcfb0e8.idx  
 			pack-f5224d1d1e6c900bd23fbdfbf11627425fcfb0e8.pack  
 
 	* ###refs  
         * ####heads  
-            >master  
+            master  
 
 		* ####remotes  
 
 			* #####origin  
 
-				>HEAD  
+				HEAD  
 
 		* ####tags  
 

@@ -1,35 +1,27 @@
 #web  
-`I.网站的Web端，基于Flask搭建，采用 MTV 的设计思想。`  
-`II.以下为整个工程下Web端的目录列表。区块引用（即名称左侧有一竖线处）表示该路径的最深处。 `
-
+1.网站的Web端，基于Flask搭建，采用 MTV 的设计思想。  
+2.以下为整个工程下Web端的目录列表。区块引用（即名称左侧有一竖线处）表示该路径的最深处。  
 
 * ##youmu  
-    * ###api  
-	`:本系统基于Flask框架构建，此目录是其API`
-		* ####barrage  
-		`弹幕相关模块`  
-			
-            >\_\_init\_\_.py  
+    * ###api：本系统基于Flask框架构建，此目录是其API
+		* ####barrage：弹幕相关模块
+			\_\_init\_\_.py  
 			\_\_init\_\_.pyc  
 			service.py  
 			service.pyc  
 			views.py  
 			views.pyc  
 
-		* ####comment  
-        `评论相关模块`
-
-            >\_\_init\_\_.py  
+		* ####comment: 评论相关模块
+			\_\_init\_\_.py  
 			\_\_init\_\_.pyc  
 			service.py  
 			service.pyc  
 			views.py  
 			views.pyc  
 
-		* ####user  
-        `用户信息相关模块`
-
-            >\_\_init\_\_.py  
+		* ####user：用户信息相关模块
+			\_\_init\_\_.py  
 			\_\_init\_\_.pyc  
 			forms.py  
 			forms.pyc  
@@ -38,20 +30,16 @@
 			views.py  
 			views.pyc  
 
-		* ####video  
-        `视频信息相关模块`
-
-			>\_\_init\_\_.py  
+		* ####video：视频信息相关模块
+			\_\_init\_\_.py  
 			\_\_init\_\_.pyc  
 			service.py  
 			service.pyc  
 			views.py  
 			views.pyc  
 
-		* ####videolist  
-        `视频列表相关模块`
-
-			>\_\_init\_\_.py  
+		* ####videolist：视频列表相关模块
+			\_\_init\_\_.py  
 			\_\_init\_\_.pyc  
 			service.py  
 			service.pyc  
@@ -61,28 +49,22 @@
 		* \_\_init\_\_.py  
 		* \_\_init\_\_.pyc  
 
-	* ###clients  
-    `Mongo的客户端相关模块`
-
-		>\_\_init\_\_.py  
+	* ###clients：Mongo的客户端相关模块
+		\_\_init\_\_.py  
 		\_\_init\_\_.pyc  
 		mongoclient.py  
 		mongoclient.pyc  
 		tunetclient.py  
 		tunetclient.pyc  
 
-	* ###frontend  
-    `框架的装饰器及模块的渲染`
-
-		>\_\_init\_\_.py  
+	* ###frontend：框架的装饰器及模块的渲染
+		\_\_init\_\_.py  
 		\_\_init\_\_.pyc  
 		views.py  
 		views.pyc  
 
-	* ###models  
-    `数据模型，包括弹幕、评论、用户管理、视频管理等`
-
-		>\_\_init\_\_.py  
+	* ###models：数据模型，包括弹幕、评论、用户管理、视频管理等
+		\_\_init\_\_.py  
 		\_\_init\_\_.pyc  
 		barrage.py  
 		barrage.pyc  
@@ -93,13 +75,10 @@
 		video.py  
 		video.pyc  
 
-	* ###static  
-    `网页静态文件夹`
+	* ###static：网页静态文件夹
 
-		* ####css  
-        `CSS样式表`
-
-			>base.css  
+		* ####css：CSS样式表
+			base.css  
 			docs.css  
 			font-awesome.min.css  
 			foundation.css  
@@ -108,12 +87,10 @@
 			videojs_ABdm.css  
 			video-js.css  
 
-		* ####fonts  
-        `字体文件`
-
+		* ####fonts：字体文件
 			* #####svgs
 
-				>fi-address-book.svg  
+				fi-address-book.svg  
 				fi-alert.svg  
 				fi-align-center.svg  
 				fi-align-justify.svg  
@@ -396,7 +373,6 @@
 				fi-yen.svg  
 				fi-zoom-in.svg  
 				fi-zoom-out.svg  
-
 			* FontAwesome.otf  
 			* fontawesome-webfont.eot  
 			* fontawesome-webfont.svg  
@@ -408,27 +384,24 @@
 			* foundation-icons.ttf  
 			* foundation-icons.woff  
 
-		* ####img  
-        `图片文件`
-
-			>human-head-with-question-mark.jpg  
+		* ####img：图片文件
+			human-head-with-question-mark.jpg  
 			stone_lion_blurred.jpg  
 			stone_lion.jpg  
 			youmu.jpg  
 			youmu-circle.png  
 			youmu-seal.jpg  
 
-		* ####js  
-        `js文件`
+		* ####js：js文件
 
 			* #####CommentCoreLibrary  
 
-				>BilibiliFormat.js  
+				BilibiliFormat.js  
 				CommentCoreLibrary.js  
 
 			* #####foundation  
 
-                >foundation.abide.js  
+                foundation.abide.js  
 				foundation.accordion.js  
 				foundation.alert.js  
 				foundation.clearing.js  
@@ -448,7 +421,7 @@
 
 			* #####vendor
 
-				>fastclick.js  
+				fastclick.js  
 				jquery.cookie.js  
 				jquery.form.js  
 				jquery.js  
@@ -465,12 +438,11 @@
 			* video.js  
 			* videojs_ABdm.js  
 
-		* ####sass  
-        `Sass样式表`
+		* ####sass：Sass样式表
 
 			* #####breakpoints  
 
-				>_base.scss  
+				_base.scss  
 				_breakpoints.scss  
 				_large.scss  
 				_regular.scss  
@@ -479,11 +451,11 @@
 
 			* #####modules  
 
-				>_modules.scss  
+				_modules.scss  
 
 			* #####partials  
 
-				>_comments.scss  
+				_comments.scss  
 				_footer.scss  
 				_index.scss  
 				_partials.scss  
@@ -492,7 +464,7 @@
 
 			* #####variables  
 
-				>_colors.scss  
+				_colors.scss  
 				_fonts.scss  
 				_variables.scss  
 
@@ -502,7 +474,7 @@
 
 					* #####addons  
 
-						>_button.scss  
+						_button.scss  
 						_clearfix.scss  
 						_directional-values.scss  
 						_ellipsis.scss  
@@ -519,7 +491,7 @@
 
 					* #####css3  
 
-						>_animation.scss  
+						_animation.scss  
 						_appearance.scss  
 						_backface-visibility.scss  
 						_background.scss  
@@ -547,7 +519,7 @@
 
 					* #####functions
 
-						>_assign.scss  
+						_assign.scss  
 						_color-lightness.scss  
 						_flex-grid.scss  
 						_golden-ratio.scss  
@@ -562,7 +534,7 @@
 
 					* #####helpers  
 
-						>_convert-units.scss  
+						_convert-units.scss  
 						_gradient-positions-parser.scss  
 						_is-num.scss  
 						_linear-angle-parser.scss  
@@ -577,7 +549,7 @@
 						_str-to-num.scss  
 					* #####settings  
 
-						>_asset-pipeline.scss  
+						_asset-pipeline.scss  
 						_prefixer.scss  
 						_px-to-em.scss  
 
@@ -586,7 +558,7 @@
 
 				* #####modular-scale  
 
-					>_calc.scss  
+					_calc.scss  
 					_function.scss  
 					_function-list.scss  
 					_generate-list.scss  
@@ -599,12 +571,12 @@
 
 					* #####functions  
 
-						>_new-breakpoint.scss  
+						_new-breakpoint.scss  
 						_private.scss  
 
 					* #####grid  
 
-						>_box-sizing.scss  
+						_box-sizing.scss  
 						_direction-context.scss  
 						_display-context.scss  
 						_fill-parent.scss  
@@ -621,7 +593,7 @@
 
 					* #####settings  
 
-						>_disable-warnings.scss  
+						_disable-warnings.scss  
 						_grid.scss  
 						_visual-grid.scss
 
@@ -632,30 +604,27 @@
 			* _grid-settings.scss  
 			* base.scss  
 
-		* ####uploads  
-           `上传文件`
+		* ####uploads：上传文件
 
 			* #####images  
 
-				>uxa5m3R_save_5000_214503_1e-8.jpg  
+				uxa5m3R_save_5000_214503_1e-8.jpg  
 
 			* #####videos  
 
-				>touch.txt  
+				touch.txt  
 
-		* #####video-js  
-        `video的js文件`
-
+		* #####video-js：video的js文件
 			* #####font  
 
-				>vjs.eot  
+				vjs.eot  
 				vjs.svg  
 				vjs.ttf  
 				vjs.woff  
 
 			* #####lang  
 
-				>de.js  
+				de.js  
 				es.js  
 				fr.js  
 				it.js  
@@ -678,18 +647,17 @@
 
 		* comment.xml  
 
-	* ###templates  
-    `网站界面模板目录`
+	* ###templates：网站界面模板目录
 
 		* ####errors  
 
-			>forbidden_page.html  
+			forbidden_page.html  
 			page_not_found.html  
 			server_error.html  
 
 		* ####partials  
 
-			>foot.html  
+			foot.html  
 			head.html  
 			topbar.html  
 
@@ -697,7 +665,7 @@
 
 			* #####partials  
 
-				>profile.html  
+				profile.html  
 				tabs.html  
 				users.html  
 				videos.html  
@@ -727,14 +695,13 @@
 * runserver.py  
 * thuaccount.py  
 
-* ##.git  
-`Git用于跟踪管理版本库的Git仓库。`
+* ##.git：Git用于跟踪管理版本库的Git仓库。
 
 	* ###branches  
 
 	* ###hooks  
 
-		>applypatch-msg.sample  
+		applypatch-msg.sample  
 		commit-msg.sample  
 		post-update.sample  
 		pre-applypatch.sample  
@@ -746,7 +713,7 @@
 
 	* ###info  
 
-		>exclude
+		exclude
 
 	* ###logs  
 
@@ -754,13 +721,13 @@
 
 			* #####heads  
 
-				>master  
+				master  
 
 			* #####remotes  
 
 				* #####origin  
 
-					>HEAD  
+					HEAD  
 
 		HEAD 
 
@@ -770,15 +737,15 @@
 
 		* ####pack  
 
-			>pack-06f7fc4bb3c761731898e4d0494af250ee9ba0d7.idx  
+			pack-06f7fc4bb3c761731898e4d0494af250ee9ba0d7.idx  
 			pack-06f7fc4bb3c761731898e4d0494af250ee9ba0d7.pack  
 
 	* ###refs  
 		* ####heads  
-			>master  
+			master  
 		* ####remotes  
 			* #####origin  
-				>HEAD  
+				HEAD  
 
 		* ####tags  
 	* config  
