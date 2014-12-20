@@ -69,6 +69,18 @@
 }
 ```
 
+##### live
+
+```
+{
+    "live_id": 2,
+    "name": "曼联vs利物浦",
+    "cover": ?
+    "entry": "rmtp://xx",
+    "active": True
+}
+```
+
 ### APIs
 
 ##### 测试用临时接口
@@ -76,6 +88,20 @@
 `GET /api/user/_transform` 将当前用户在管理员和超级用户中切换
 
 `GET /api/user/_tell` 返回用户名字
+
+##### live
+
+`GET /api/live` 返回所有active的live model
+
+`POST /api/live` 添加一个直播，need admin
+
++ Data: name = xx, entry = xx
+
+`POST /api/live/{live_id}/_enable` 顾名思义 need admin
+
+`POST /api/live/{live_id}/_disable` 顾名思义 need admin
+
+`GET /api/live/{live_id}` 顾名思义
 
 ##### admin
 
@@ -180,6 +206,10 @@
 + Return: `{"like": "yes"/"no"}`
 
 `GET /file/<video_id>/WAIMAIdi2fen0.5price"` dirty code。。。
+
+`GET /api/video/_categories`
+
++ Return: `{"categories": ['asf', 'asbf', 'asdf']}`
 
 ##### videolist
 
