@@ -1,0 +1,41 @@
+.main_title {
+    color: #30A2BC;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+    .main_title .project_name {
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font-size: 100px;
+    }
+    .main_title .group_name {
+        text-indent:200px;
+        font-size: 40px;
+    }
+
+.youmu_slide {
+    color: #4d4d4d;
+    padding-top:20px; padding-bottom:20px
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.title2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-indent:25px;
+}
+
+.end {
+    text-align: center;
+}

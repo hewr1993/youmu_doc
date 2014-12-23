@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>darren - Impress demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://bartaz.github.com/impress.js/css/impress-demo.css" rel="stylesheet" />
+        <link href="css/base.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="impress-not-supported">
+            <div class="fallback-message">
+                <p>你的浏览器<b>不支持</b> impress.js, 所以当前展示的是简化版。</p>
+                <p>为了获得更好的体验，请使用最新的 <b>Chrome</b>, <b>Safari</b> 或者 <b>Firefox</b> 浏览器。</p>
+            </div>
+        </div>
+        <div id="impress">
+            <div class="step main_title" data-x="0" data-y="0" data-z="-200" data-scale="0.5">
+                <div class="project_name">Youmu</div>
+                <div class="group_name">三比二小组</div>
+            </div>
+            <div class="step" data-x="700" data-y="0" data-scale="0.5">
+                <div class="title1">技术</div>
+            </div>
+            <div class="step youmu_slide" data-x="800" data-y="700" data-scale="0.8">
+                <div class="title2">Front End</div>
+                <div class="content">AngularJS</div>
+                <div class="content">Asynchronous Web Design (AJAX jQuery)</div>
+                <div class="content">Responsive Web Design</div>
+                <div class="content">Self-Implemented Video Player</div>
+            </div>
+            <div class="step youmu_slide" data-x="800" data-y="1400">
+                <div class="title2">Back End</div>
+                <div class="content">Python</div>
+                <div class="content">Django</div>
+                <div class="content">MongoDB</div>
+            </div>
+            <div class="step" data-x="-200" data-y="2500" data-rotate="90">
+                <div class="title1">极简的界面</div>
+            </div>
+            <div id="my_iframe1" class="step" data-x="-900" data-y="2500" data-rotate="90" data-scale="0.8">
+            <iframe src="http://www.tsinghua.edu.cn/publish/newthu/index.html" name="iframe_a" width="900" height="500"></iframe>
+            </div>
+            <div id="my_iframe2" class="step" data-x="-1600" data-y="2500" data-rotate="90">
+            <iframe src="http://www.tsinghua.edu.cn/publish/newthu/index.html" name="iframe_b" width="540" height="500"></iframe>
+            </div>
+            <div id="my_iframe3" class="step" data-x="-2300" data-y="2500" data-rotate="90">
+            <iframe src="http://www.tsinghua.edu.cn/publish/newthu/index.html" name="iframe_c" width="320" height="480"></iframe>
+            </div>
+            <div class="step" data-x="-3500" data-y="1700" data-z="200" data-rotate="180">
+                <div class="title1">内容</div>
+            </div>
+            <div class="step" data-x="-3450" data-y="1000" data-z="200" data-rotate="180" data-scale="0.8">
+                <iframe src="http://www.tsinghua.edu.cn/publish/newthu/index.html" name="iframe_d" width="900" height="500"></iframe>
+            </div>
+            <div class="step" data-x="-3400" data-y="300" data-z="200" data-rotate="180">
+                <iframe src="http://www.tsinghua.edu.cn/publish/newthu/index.html" name="iframe_e" width="900" height="500"></iframe>
+            </div>
+            <!-- darren code -->
+            <div class="step" data-x="-1400" data-y="1200" data-rotate-z="180" data-scale="4">
+                <div class="end">谢谢</div>
+            </div>
+        </div>
+        <script src="http://bartaz.github.com/impress.js/js/impress.js"></script>
+        <script>impress().init();</script>
+    </body>
+</html>
+
