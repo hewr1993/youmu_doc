@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Proj2 - 游目</title>
+
+  <meta name="description" content="Getting Started with RubyMotion">
+  <meta name="author" content="Gant Laborde">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/default.css" id="theme">
+  <link rel="stylesheet" href="css/overrides.css" id="theme">
+	<script src="js/jquery.js"></script>
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/zenburn.css">
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+	document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	function createIframe(ele, url) {
+		var width = ele.style.width.substring(0, ele.style.width.length - 2);
+		var height = ele.style.height.substring(0, ele.style.height.length - 2);
+		ele.innerHTML = "<iframe src='"+url+"' width="+width+" height="+height+"></iframe>";
+		ele.style.border = "";
+	}
+  </script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		<section>
+  				<section>
+					<img src="img/youmu-seal.png" style="background: none; border: 0; padding-left: 0px;" />
+			<h3 class="em">音视频点直播平台</h3>
+			<p class="em2" >By 三比二小组</p>
+		</section>
+
+		<section>
+			<h2 class="em">@三比二小组</h2>
+			<ul class="fragment">
+				<p>何蔚然</p>
+				<p>张洵恺</p>
+				<p>甄显安</p>
+				<p>陆  喆</p>
+				<p>黄福林</p>
+			</ul>
+			<ul class="fragment">
+				<p>男</p>
+				<p>男</p>
+				<p>女</p>
+				<p>女</p>
+				<p>男</p>
+			</ul>
+		</section>
+
+	  </section>
+
+	  <section>
+
+		<section>
+		  <h2 class="em">Frontend</h2>
+			<ul>
+				<li>Foundation 5</li>
+				<li>AngularJS</li>
+				<li>VideoJS</li>
+				<li>BiliBili Barrage</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2 class="em">Backend</h2>
+			<ul>
+				<li>Flask <em>(Python 2.7)</em></li>
+				<li>MongoDB</li>
+			</ul>
+		</section>
+
+	  </section>
+
+
+
+	  <section>
+		  <h1 class="em">Features</h1>
+	  </section>
+
+	<section>
+	  <h2 class="em">Parallax Scrolling</h2>
+	  <div class="fragment fade-in">
+		<h3>StellarJS</h3>
+		  <center>
+			  <div style="width:900px;height:500px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000');"></div>
+		  </center>
+	  </div>
+	  <p class="em fragment fade-in">
+		远近视差效果
+	  </p>
+	</section>
+
+	<section>
+
+		<section>
+		  <h2 class="em">插件化播放器</h2>
+		  <h3>VideoJS</h3>
+		  <ul>
+			  <li class="fragment fade-in">视频、音频点播</li>
+			  <li class="fragment fade-in">视频直播</li>
+			  <li class="fragment fade-in">弹幕</li>
+			  <li class="fragment fade-in">第三方无痛移植</li>
+		  </ul>
+		  <aside class="notes">
+			  所有核心服务一体化，同一个播放器完成
+		  </aside>
+		</section>
+
+		<section>
+		  <h2 class="em">疯狂的弹幕</h2>
+		  <h3>BiliBili Format</h3>
+		  <center>
+			  <div style="width:800px;height:600px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000/videos/1');"></div>
+		  </center>
+		</section>
+	</section>
+
+	<section>
+
+		<section>
+		  <h2 class="em">全平台支持</h2>
+		  <table>
+			  <tr><img src="./img/chrome.jpeg" width=150><tr>
+			  <tr><img src="./img/safari.jpeg" width=150><tr>
+			  <tr><img src="./img/firefox.jpeg" width=150><tr>
+			  <tr><img src="./img/ie.jpeg" width=150><tr>
+		  </table>
+		  <p class="fragment"><span class="em2">IE&geq;9</span> of course! </p>
+		</section>
+
+		<section>
+		  <h2 class="em">全平台支持</h2>
+		  <table>
+			  <tr><img src="./img/imac.jpg" height=150><tr>
+			  <tr><img src="./img/ipad.jpg" height=150><tr>
+			  <tr><img src="./img/iphone.jpg" height=150><tr>
+			  <tr><img src="./img/android.jpg" height=150><tr>
+		  </table>
+		  <em class="fragment em2">直播服务视乎协议对系统的支持</em>
+		</section>
+
+	</section>
+
+	<section>
+		
+		<section>
+		  <h2 class="em">Large Screen</h2>
+		  <center>
+			  <div style="width:1024px;height:600px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000');"></div>
+		  </center>
+		</section>
+
+		<section>
+		  <h2 class="em">Large Screen</h2>
+		  <center>
+			  <div style="width:1024px;height:600px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000/videos/8');"></div>
+		  </center>
+		</section>
+
+	</section>
+
+	<section>
+	  <h2 class="em">Medium Screen</h2>
+	  <center>
+		  <table>
+			  <tr>
+				  <td><div style="width:520px;height:640px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000');"></div></td>
+				  <td><div style="width:520px;height:640px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000/videos/6');"></div></td>
+			  </tr>
+		  </table>
+	  </center>
+	</section>
+
+	<section>
+	  <h2 class="em">Mini Screen</h2>
+	  <center>
+		  <table>
+			  <tr>
+				  <td><div style="width:400px;height:500px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000');"></div></td>
+				  <td><div style="width:400px;height:500px;border:4px solid #eeeeee;" onclick="createIframe(this, 'http://166.111.206.70:5000/videos/6');"></div></td>
+			  </tr>
+		  </table>
+	  </center>
+	</section>
+
+	<section data-transition="linear" data-background-transition="slide">
+      <section data-background="url(img/stone_lion.jpg)">
+		<h2 class="em">Thank you!</h2>
+		<p class="fragment fade-in">
+		  Questions?
+		</p>
+		<img src="img/youmu-circle.png" class="logo" />
+		<small>仰观宇宙之大，俯察品类之盛，所以游目骋怀，足以极视听之娱，信可乐也。</small><br>
+		<small class="em2">晋·王羲之《兰亭集序》</small>
+	  </section>
+	</section>
+
+
+  </div>
+
+</div>
+
+<script src="js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+	   { src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+	   { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	   { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	   { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	   { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+	   { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+		  ]
+		});
+
+</script>
+
+<div id="footer"></div>
+</body>
+</html>
